@@ -150,7 +150,7 @@ closest_driver(P, [X|Xs], W, R) :-
     closest_driver(P, Xs, X, R).
   
 % helper to check to locations distance
-calc(A,X,D) :-
+loc_distance(A,X,D) :-
 	location(A,B,C),
 	location(X,Y,Z),
 	distance(B,C,Y,Z,D).
@@ -168,17 +168,14 @@ is_at(bob,sfu).
 location(ubc,49.26, -123.25).
 location(sfu,49.29, -122.92).
 location(pacificCentre,49.28, -123.12).
-location(scienceWorld,49.27, -123.10).
 location(granvilleIsland,49.27, -123.13).
-location(stGeorgeSchool,49.24, -123.19).
 location(jerichoBeach,49.27, -123.19).
 location(kitsBeach, 49.27, -123.15).
 location(oakridge,49.23, -123.11).
 location(langara,49.22, -123.10).
 location(metrotownMall,49.22, -122.99).
 location(vancouverGeneralHospital,49.26, -123.12).
-location(broadwayCinema,49.26, -123.13).
-location(museumOfVancouver,49.27, -123.15).
+% location(museumOfVancouver,49.27, -123.15).
 location(yvr, 49.16, -123.18).
 location(shaughnessyGolfClub,49.24, -123.20).
 location(ikeaRichmond,49.19, -123.08).
@@ -248,32 +245,18 @@ edge(yvr,ikeaRichmond,7.532681146179575).
 edge(ikeaRichmond, yvr,7.532681146179575).
 edge(oakridge, ikeaRichmond, 4.952990958279662).
 edge(ikeaRichmond, oakridge, 4.952990958279662).
-edge(sfu,broadwayCinema,15.305326278782386).
-edge(ubc,broadwayCinema,8.658000000000328).
-edge(granvilleIsland,broadwayCinema,0.7215000000003692).
-edge(granvilleIsland,scienceWorld,2.164500000000082).
-edge(scienceWorld,aquarium,3.061065255756318).
-edge(sunYatSenGarden,canadaPlace,0.7215000000003692).
-edge(broadwayCinema,canadaPlace,2.0407101705043327).
-edge(granvilleIsland,canadaPlace,1.6133230457657775).
 
 % defined places with no coordinates.
 place(ubc).
 place(sfu).
 place(pacificCentre).
-place(scienceWorld).
 place(granvilleIsland).
-place(stGeorgeSchool).
-place(aquarium).
 place(jerichoBeach).
-place(mcArthurGlen).
-place(mountainViewCemetary).
+place(kitsBeach).
 place(oakridge).
 place(langara).
 place(metrotownMall).
 place(vancouverGeneralHospital).
-place(broadwayCinema).
-place(museumOfVancouver).
 place(yvr).
 place(shaughnessyGolfClub).
 place(ikeaRichmond).
